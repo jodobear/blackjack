@@ -1,0 +1,61 @@
+body {
+    background-color: rgb(94, 30, 18);
+    background-image: url('Cards/rick_morty_dont_panic.png');
+}
+
+#title {
+    position: relative;
+    bottom: 16px;
+    color:rgb(244, 248, 27);
+    text-align: center;
+    font-size: 4em;
+    font-family: 'Satisfy', ;
+}
+
+.table {
+    position: relative;
+    bottom: 40px;
+    height: 450px;
+    width: 800px;
+    background-color: rgb(59, 150, 59);
+    margin: 0 auto;
+    border: solid 5px rgb(130, 50, 0);
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hand {
+    height: 100px;
+    width: 700px;
+    background-color: rgba(0,0,0,.3);
+}
+
+.buttons {
+    margin-top: 40px;
+}
+
+#deal, #hit, #stay, #again {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: medium;
+    color: darkslateblue;
+}
+
+#again {
+    margin-left: 50px;
+}
+
+img {
+    height: 100%;
+    margin-left: 10px;
+    border-radius: 7px;
+}
+
+.score {
+    font-family: Georgia;
+    font-weight: bold;
+    font-size: 20px;
+}
