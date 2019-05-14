@@ -22,7 +22,7 @@ const deck = [];
 const suits = ['S', 'H', 'C', 'D'];
 const faces = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
 
-const createDeck = () => {
+const createDeck = () => {                  // deck creation function
     for (let i=0; i < suits.length; i++) {
         for (let j=0; j < faces.length; j++) {
             let value = parseInt(faces[j]);
@@ -170,8 +170,4 @@ $(document).ready(() => {
         hit.disabled = true;
         stay.disabled = true;
     });
-
-const $deal = $("#deal")
-console.log()
-
 })
