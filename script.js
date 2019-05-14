@@ -18,61 +18,28 @@ let dScore = 0;
 let points = 0;
 let usedCards = [];
 
-const deck = [                              // deck mem
-    { face: "A", suit: 'H', weight: 11 },
-    { face: 2, suit: 'H', weight: 2 },
-    { face: 3, suit: 'H', weight: 3 },
-    { face: 4, suit: 'H', weight: 4 },
-    { face: 5, suit: 'H', weight: 5 },
-    { face: 6, suit: 'H', weight: 6 },
-    { face: 7, suit: 'H', weight: 7 },
-    { face: 8, suit: 'H', weight: 8 },
-    { face: 9, suit: 'H', weight: 9 },
-    { face: 10, suit: 'H', weight: 10 },
-    { face: "J", suit: 'H', weight: 10 },
-    { face: "Q", suit: 'H', weight: 10 },
-    { face: "K", suit: 'H', weight: 10 },
-    { face: "A", suit: 'D', weight: 11 },
-    { face: 2, suit: 'D', weight: 2 },
-    { face: 3, suit: 'D', weight: 3 },
-    { face: 4, suit: 'D', weight: 4 },
-    { face: 5, suit: 'D', weight: 5 },
-    { face: 6, suit: 'D', weight: 6 },
-    { face: 7, suit: 'D', weight: 7 },
-    { face: 8, suit: 'D', weight: 8 },
-    { face: 9, suit: 'D', weight: 9 },
-    { face: 10, suit: 'D', weight: 10 },
-    { face: "J", suit: 'D', weight: 10 },
-    { face: "Q", suit: 'D', weight: 10 },
-    { face: "K", suit: 'D', weight: 10 },
-    { face: "A", suit: 'C', weight: 11 },
-    { face: 2, suit: 'C', weight: 2 },
-    { face: 3, suit: 'C', weight: 3 },
-    { face: 4, suit: 'C', weight: 4 },
-    { face: 5, suit: 'C', weight: 5 },
-    { face: 6, suit: 'C', weight: 6 },
-    { face: 7, suit: 'C', weight: 7 },
-    { face: 8, suit: 'C', weight: 8 },
-    { face: 9, suit: 'C', weight: 9 },
-    { face: 10, suit: 'C', weight: 10 },
-    { face: "J", suit: 'C', weight: 10 },
-    { face: "Q", suit: 'C', weight: 10 },
-    { face: "K", suit: 'C', weight: 10 },
-    { face: "A", suit: 'S', weight: 11 },
-    { face: 2, suit: 'S', weight: 2 },
-    { face: 3, suit: 'S', weight: 3 },
-    { face: 4, suit: 'S', weight: 4 },
-    { face: 5, suit: 'S', weight: 5 },
-    { face: 6, suit: 'S', weight: 6 },
-    { face: 7, suit: 'S', weight: 7 },
-    { face: 8, suit: 'S', weight: 8 },
-    { face: 9, suit: 'S', weight: 9 },
-    { face: 10, suit: 'S', weight: 10 },
-    { face: "J", suit: 'S', weight: 10 },
-    { face: "Q", suit: 'S', weight: 10 },
-    { face: "K", suit: 'S', weight: 10 },
-];
+const deck = [];
+const suits = ['S', 'H', 'C', 'D'];
+const faces = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
 
+const createDeck = () => {
+    for (let i=0; i < suits.length; i++) {
+        for (let j=0; j < faces.length; j++) {
+            let value = parseInt(faces[j]);
+            if (faces[j] == 'J' || faces[j] == 'Q' || faces[j] == 'K') {
+                value = 10;
+            }
+            if (faces[j] == 'A') {
+                value = 11;
+            }
+            let card = {face: faces[j], suit: suits[i], weight: value};
+            deck.push(card);
+        }
+    }
+}
+createDeck()
+
+console.log(deck)
 const dealCard = () => {    // card dealing func
     let rand = Math.floor(Math.random() * deck.length);
     card = deck[rand]
@@ -203,4 +170,8 @@ $(document).ready(() => {
         hit.disabled = true;
         stay.disabled = true;
     });
+
+const $deal = $("#deal")
+console.log()
+
 })
